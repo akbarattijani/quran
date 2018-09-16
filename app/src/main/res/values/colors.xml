@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- merchant -->
+    <color name="merchantLightBlue">#0858a0</color>
+    <color name="merchantOrange">#f18161</color>
+    <color name="merchantLightGray">#d8d8d8</color>
+    <color name="merchantGray">#4a4a4a</color>
+    <color name="merchantGray_2">#545555</color>
+    <color name="merchantRed">#eb0029</color>
+    <color name="merchantSeparator">#c6c6c6</color>
+    <color name="merchantLightGray_2">#9b9b9b</color>
+    <color name="merchantLightGray_3">#e2e2e2</color>
+    <color name="merchantActionBar">#777777</color>
+    <color name="merchantBackgroundGray">#f1f1f1</color>
+    <color name="merchantBlockMessage">#dbf9f8</color>
+    <color name="merchantExpand">#B0C4DE</color>
+    <!-- end -->
+
+    <!-- kmb -->
+    <color name="colorPrimaryBackground">#E9F0F5</color>
+    <color name="colorPrimaryContent">#0858a0</color>
+    <color name="colorBackgroundButton">#EBEBEB</color>
+    <color name="colorNotification">#FF0000</color>
+    <color name="colorSeparator">#DFE7ED</color>
+    <color name="colorscanSeparator">#fecf22</color>
+
+    <color name="white">#ffffff</color>
+    <color name="black">#040404</color>
+    <color name="transparent">#00000000</color>
+    <color name="colorPrimaryDark">#e87c36</color>
+    <color name="colorPrimaryDarkBlue">#0F84BF</color>
+    <color name="colorPrimaryDarkPurple">#0F85BF</color>
+    <!--<color name="colorPrimaryContent">#059ff5</color>-->
+    <color name="colorToolbarRed">#fb5454</color>
+    <color name="colorStatusBarRed">#C84343</color>
+    <color name="colorStatusBarGreen">#23A565</color>
+    <color name="tabSelected">#ffffff</color>
+    <color name="tabUnselected">#ccffffff</color>
+    <drawable name="transparent">#00ffffff</drawable>
+
+    <!-- sobatku -->
+    <color name="dark_gray">#757575</color>
+    <color name="red">#ed1c24</color>
+    <color name="dark_red">#94011a</color>
+    <color name="light_red">#f18161</color>
+    <color name="light_red_2">#f97b70</color>
+    <color name="dark_blue">#0d47a1</color>
+    <color name="light_gray">#e0e0e0</color>
+    <color name="gray">#7b7b7b</color>
+    <color name="ic">#2d3542</color>
+    <color name="abu">#f5f5f5</color>
+    <color name="blue_light">#2f9cf3</color>
+    <color name="yellow">#ff8a00</color>
+    <color name="sobatku_red">#4bacc7</color>
+    <color name="orange">#f7931d</color>
+    <color name="green">#01a647</color>
+
+    <color name="header">#046d9c</color>
+    <color name="header2">#9ccecd</color>
+    <color name="btn_state">#046d9c</color>
+    <color name="btn_selected">#024f71</color>
+    <color name="btn_light">#6ac5ee</color>
+
+    <color name="tab">#82a19e</color>
+    <color name="tab_press">#5f7a7a</color>
+
+    <color name="blue_text">#3280fa</color>
+    <drawable name="altercolor1">#00000000</drawable>
+
+
+    <!-- CACA -->
+    <color name="statusBar">#1080c1</color>
+    <color name="actionBar">#1792f6</color>
+    <color name="dark_blue_sky">#1879c9</color>
+    <color name="red_button">#fb5454</color>
+    <color name="gray_button">#c9c9c9</color>
+
+</resources>
+
