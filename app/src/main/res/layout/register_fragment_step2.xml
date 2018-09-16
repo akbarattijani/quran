@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:id="@+id/component"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.8"
+            android:textColor="@color/merchantGray_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Birthday"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/border_white"
+            android:elevation="4dp">
+
+            <LinearLayout
+                android:id="@+id/llDay"
+                android:layout_weight="0.5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spDay"
+                    android:background="@drawable/custom_spinner"
+                    android:gravity="center_horizontal"
+                    android:textStyle="bold"
+                    android:layout_margin="7dp"
+                    android:layout_weight="0.8"
+                    android:textColor="@color/merchantGray_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="14sp"/>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/merchantLightGray_2"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llMonth"
+                android:layout_weight="0.5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spMonth"
+                    android:background="@drawable/custom_spinner"
+                    android:gravity="center_horizontal"
+                    android:textStyle="bold"
+                    android:layout_margin="7dp"
+                    android:layout_weight="0.8"
+                    android:textColor="@color/merchantGray_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="14sp"/>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/merchantLightGray_2"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llYear"
+                android:layout_weight="0.5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/etYear"
+                    android:background="@android:color/transparent"
+                    android:gravity="center_horizontal|center"
+                    android:textStyle="bold"
+                    android:layout_margin="7dp"
+                    android:layout_weight="0.8"
+                    android:textColor="@color/merchantGray_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Year"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.8"
+            android:textColor="@color/merchantGray_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gender"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/border_white_not_padding"
+            android:elevation="4dp">
+
+            <LinearLayout
+                android:id="@+id/llMale"
+                android:layout_weight="0.5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="@drawable/border_white_not_padding_blue_left">
+
+                <TextView
+                    android:id="@+id/tvMale"
+                    android:gravity="center_horizontal"
+                    android:textStyle="bold"
+                    android:layout_margin="7dp"
+                    android:layout_weight="0.8"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Male"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llFemale"
+                android:layout_weight="0.5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="@drawable/border_white_not_padding">
+
+                <TextView
+                    android:id="@+id/tvFemale"
+                    android:gravity="center_horizontal"
+                    android:textStyle="bold"
+                    android:layout_margin="7dp"
+                    android:layout_weight="0.8"
+                    android:textColor="@color/merchantGray_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Female"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.8"
+            android:textColor="@color/merchantGray_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone Number"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/border_white"
+            android:elevation="4dp">
+
+            <LinearLayout
+                android:id="@+id/llArea"
+                android:layout_weight="0.7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spArea"
+                    android:background="@drawable/custom_spinner"
+                    android:gravity="center_horizontal"
+                    android:textStyle="bold"
+                    android:layout_margin="7dp"
+                    android:layout_weight="0.8"
+                    android:textColor="@color/merchantGray_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="+880"
+                    android:textSize="14sp"/>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/merchantLightGray_2"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llPhoneNumber"
+                android:layout_weight="0.3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/etPhoneNumber"
+                    android:background="@android:color/transparent"
+                    android:gravity="center_horizontal|center"
+                    android:textStyle="bold"
+                    android:layout_margin="7dp"
+                    android:layout_weight="0.8"
+                    android:textColor="@color/merchantGray_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="1234 5678 910"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <CheckBox
+            android:buttonTint="@color/colorPrimaryDarkBlue"
+            android:id="@+id/tvAgree"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/merchantGray_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Agree with Terms and Condition"
+            android:textSize="12sp"/>
+
+        <LinearLayout
+            android:id="@+id/llCreate"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/radius_login"
+            android:elevation="4dp">
+
+            <TextView
+                android:layout_margin="10dp"
+                android:textColor="@color/white"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Create Account"
+                android:textSize="14sp"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

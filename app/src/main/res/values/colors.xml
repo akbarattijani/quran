@@ -23,11 +23,12 @@
     <color name="colorSeparator">#DFE7ED</color>
     <color name="colorscanSeparator">#fecf22</color>
 
+    <color name="baseColor">#39DDDD</color>
     <color name="white">#ffffff</color>
     <color name="black">#040404</color>
     <color name="transparent">#00000000</color>
     <color name="colorPrimaryDark">#e87c36</color>
-    <color name="colorPrimaryDarkBlue">#0F84BF</color>
+    <color name="colorPrimaryDarkBlue">#39DDDD</color>
     <color name="colorPrimaryDarkPurple">#0F85BF</color>
     <!--<color name="colorPrimaryContent">#059ff5</color>-->
     <color name="colorToolbarRed">#fb5454</color>
@@ -73,6 +74,4 @@
     <color name="dark_blue_sky">#1879c9</color>
     <color name="red_button">#fb5454</color>
     <color name="gray_button">#c9c9c9</color>
-
 </resources>
-

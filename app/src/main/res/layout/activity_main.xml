@@ -1,34 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
-    tools:context=".activity.StartupActivity">
+    android:background="@color/colorPrimaryDarkBlue"
+    tools:context=".activity.BeginActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Login"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:layout_marginLeft="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="close"
+        android:textColor="@color/white"/>
 
     <LinearLayout
         android:id="@+id/container"
-        android:layout_below="@+id/strut1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/radius_login_white"
+        android:elevation="8dp">
+
     </LinearLayout>
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:civ_border_color="#fff"
-        app:civ_border_width="2dp"
-        android:src="@drawable/logo"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"/>
-
-    <View
-        android:layout_marginTop="90dp"
-        android:id="@+id/strut1"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"/>
-</RelativeLayout>
+</LinearLayout>

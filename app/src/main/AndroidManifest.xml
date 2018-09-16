@@ -27,7 +27,24 @@
             android:launchMode="singleInstance"
             android:screenOrientation="portrait"
             android:theme="@style/base_theme" />
-        <activity android:name=".activity.TestActivity"></activity>
+        <activity
+            android:name=".activity.TestActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@style/base_theme" />
+        <activity
+            android:name=".activity.BeginActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@style/base_theme" />
+        <activity
+            android:name=".activity.LauncherActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@style/base_theme"/>
     </application>
 
 </manifest>

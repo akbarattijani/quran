@@ -5,15 +5,14 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@drawable/background"
+    android:background="@color/colorPrimaryDarkBlue"
     tools:context=".activity.DashboardActivity">
 
     <LinearLayout
         android:id="@+id/llHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@color/merchantLightBlue">
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
@@ -29,27 +28,29 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:layout_marginBottom="50dp"
         android:id="@+id/component"
         android:layout_below="@+id/strut1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/shadow_background_strong">
+        android:background="@drawable/radius_login_white"
+        android:elevation="8dp">
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/component1"
         android:layout_below="@+id/strut1"
         android:orientation="vertical"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="50dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:elevation="8dp">
 
         <LinearLayout
             android:layout_marginTop="50dp"
@@ -194,20 +195,18 @@
             android:background="@color/merchantLightGray_2"/>
     </LinearLayout>
 
-    <de.hdodenhof.circleimageview.CircleImageView
+    <ImageView
         android:id="@+id/profile_image"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:civ_border_color="#fff"
-        app:civ_border_width="2dp"
-        android:src="@drawable/logo"
+        android:src="@drawable/logo_white"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"/>
+        android:layout_marginTop="60dp"/>
 
     <View
         android:layout_below="@+id/llHeader"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="80dp"
         android:id="@+id/strut1"
         android:layout_width="match_parent"
         android:layout_height="1dp"/>
@@ -220,12 +219,14 @@
         android:layout_height="1dp"/>
 
     <LinearLayout
+        android:id="@+id/llTest"
         android:layout_marginLeft="50dp"
         android:layout_below="@+id/strut2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@drawable/shadow_background_blue">
+        android:background="@drawable/radius_login"
+        android:elevation="8dp">
 
         <TextView
             android:layout_margin="20dp"
@@ -237,13 +238,15 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/llLive"
         android:layout_marginRight="50dp"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/strut2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@drawable/shadow_background_blue">
+        android:background="@drawable/radius_login"
+        android:elevation="8dp">
 
         <TextView
             android:layout_margin="20dp"

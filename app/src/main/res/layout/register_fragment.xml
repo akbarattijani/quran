@@ -1,185 +1,215 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
-
-    <RelativeLayout
-        android:layout_marginTop="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/shadow_background"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:id="@+id/footer">
-
-        <TextView
-            android:layout_centerInParent="true"
-            android:layout_alignParentBottom="true"
-            android:layout_margin="10dp"
-            android:textColor="@color/merchantLightBlue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sign In"
-            android:textSize="20sp"/>
-    </RelativeLayout>
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
 
     <LinearLayout
-        android:orientation="vertical"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="50dp"
         android:id="@+id/component"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/shadow_background_strong">
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/component1"
         android:orientation="vertical"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="60dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_marginTop="40dp"
+            android:id="@+id/icon"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/logo"/>
 
         <LinearLayout
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="30dp"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="@drawable/shadow_background">
-
-            <ImageView
-                android:layout_margin="10dp"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/user_logo"/>
+            android:background="@drawable/border_white"
+            android:elevation="4dp">
 
             <android.support.design.widget.TextInputEditText
-                android:id="@+id/etUsername"
-                android:gravity="center_vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textColor="@color/merchantLightBlue"
-                android:textSize="16dp"
-                android:hint="Input Username"
-                android:textColorHint="@color/merchantLightBlue"
-                android:imeOptions="actionNext" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/shadow_background">
-
-            <ImageView
-                android:layout_margin="10dp"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/email"/>
-
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/etEmail"
-                android:gravity="center_vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textColor="@color/merchantLightBlue"
-                android:textSize="16dp"
-                android:hint="Input Email"
-                android:textColorHint="@color/merchantLightBlue"
-                android:imeOptions="actionNext" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/shadow_background">
-
-            <ImageView
-                android:layout_margin="10dp"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/name"/>
-
-            <android.support.design.widget.TextInputEditText
+                android:layout_weight="0.2"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="5dp"
                 android:id="@+id/etName"
                 android:gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textColor="@color/merchantLightBlue"
-                android:textSize="16dp"
-                android:hint="Input Nama"
-                android:textColorHint="@color/merchantLightBlue"
-                android:imeOptions="actionNext" />
+                android:textColor="@color/merchantLightGray_2"
+                android:textSize="14dp"
+                android:hint="Full Name"
+                android:textColorHint="@color/merchantLightGray_2"
+                android:imeOptions="actionNext"
+                android:background="@android:color/transparent"/>
+
+            <TextView
+                android:layout_marginRight="10dp"
+                android:gravity="center_vertical|right"
+                android:layout_weight="0.8"
+                android:textColor="@color/merchantLightGray_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="person"
+                android:textSize="12sp"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_marginTop="5dp"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="@drawable/shadow_background">
-
-            <ImageView
-                android:layout_margin="10dp"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/password_logo"/>
+            android:background="@drawable/border_white"
+            android:elevation="4dp">
 
             <android.support.design.widget.TextInputEditText
+                android:layout_weight="0.2"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/etEmail"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/merchantLightGray_2"
+                android:textSize="14dp"
+                android:hint="Email Address"
+                android:textColorHint="@color/merchantLightGray_2"
+                android:imeOptions="actionNext"
+                android:background="@android:color/transparent"/>
+
+            <TextView
+                android:layout_marginRight="10dp"
+                android:gravity="center_vertical|right"
+                android:layout_weight="0.8"
+                android:textColor="@color/merchantLightGray_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="email"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/border_white"
+            android:elevation="4dp">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_weight="0.2"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="5dp"
                 android:id="@+id/etPassword"
                 android:gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textColor="@color/merchantLightBlue"
-                android:textSize="16dp"
+                android:textColor="@color/merchantLightGray_2"
+                android:textSize="14dp"
+                android:hint="Password"
                 android:inputType="textPassword"
-                android:hint="Input Password"
-                android:textColorHint="@color/merchantLightBlue"
-                android:imeOptions="actionDone" />
+                android:textColorHint="@color/merchantLightGray_2"
+                android:imeOptions="actionDone"
+                android:background="@android:color/transparent"/>
+
+            <TextView
+                android:layout_marginRight="10dp"
+                android:gravity="center_vertical|right"
+                android:layout_weight="0.8"
+                android:textColor="@color/merchantLightGray_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="security"
+                android:textSize="12sp"/>
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/llCreate"
-            android:layout_marginTop="5dp"
+            android:id="@+id/llNext"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginBottom="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/shadow_background">
+            android:background="@drawable/radius_login"
+            android:elevation="4dp">
 
             <TextView
                 android:layout_margin="10dp"
-                android:textColor="@color/merchantLightBlue"
+                android:textColor="@color/white"
                 android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Create Account"
-                android:textSize="25sp"/>
+                android:text="Next"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <TextView
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="or"
+            android:textColor="@color/merchantGray_2"
+            android:textSize="13sp"/>
+
+        <LinearLayout
+            android:id="@+id/llFacebook"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/radius_login_blue_strong"
+            android:elevation="4dp">
+
+            <TextView
+                android:layout_margin="10dp"
+                android:textColor="@color/white"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Signup with Facebook"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llTwitter"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/radius_login_blue_weak"
+            android:elevation="4dp">
+
+            <TextView
+                android:layout_margin="10dp"
+                android:textColor="@color/white"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Signup with Twitter"
+                android:textSize="14sp"/>
         </LinearLayout>
     </LinearLayout>
-</RelativeLayout>
+</ScrollView>

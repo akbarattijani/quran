@@ -27,7 +27,7 @@
 
     <style name="checkbox" parent="Theme.AppCompat.Light">
         <item name="colorControlNormal">@color/colorPrimaryDarkBlue</item>
-        <item name="colorControlActivated">@color/colorPrimaryContent</item>
+        <item name="colorControlActivated">@color/colorPrimaryDarkBlue</item>
     </style>
 
     <style name="base_theme" parent="Theme.AppCompat.NoActionBar">

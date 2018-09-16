@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.quran.study.R;
+import com.quran.study.listener.SwipeListener;
 
 import java.util.List;
 
@@ -20,41 +21,44 @@ import java.util.List;
 public class SwipeStackAdapter extends BaseAdapter {
 
     private List<String> mData;
+    private View[] views;
+    private int[] layouts;
+    private int size;
     private Context context;
+    private SwipeListener listener;
 
-    public SwipeStackAdapter(Context context, List<String> data) {
+//    public SwipeStackAdapter(Context context, List<String> data) {
+//        this.context = context;
+//        this.mData = data;
+//    }
+
+    public SwipeStackAdapter(Context context, int size, SwipeListener listener, int... layouts) {
         this.context = context;
-        this.mData = data;
+        this.layouts = layouts;
+        this.size = size;
+        this.listener = listener;
     }
 
     @Override
     public int getCount() {
-        return mData.size();
+        return size;
     }
 
     @Override
-    public String getItem(int position) {
-        return mData.get(position);
-    }
-
-    @Override
-    public long getItemId(int position) {
+    public Object getItem(int position) {
         return position;
     }
 
     @Override
-    public View getView(final int position, View convertView, ViewGroup parent) {
-        if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.loading_layout, parent, false);
-            AlphaAnimation alpha = new AlphaAnimation(0.5F, 0.5F);
-            alpha.setDuration(0); // Make animation instant
-            alpha.setFillAfter(true); // Tell it to persist after the animation ends
-// And then on your layout
-            convertView.startAnimation(alpha);
-        }
+    public long getItemId(int position) {
+        return 0;
+    }
 
-        TextView textViewCard = (TextView) convertView.findViewById(R.id.tvHeader);
-        textViewCard.setText(mData.get(position));
+    @Override
+    public View getView(final int position, View convertView, ViewGroup parent) {
+        convertView = LayoutInflater.from(context).inflate(layouts[position], parent, false);
+        views = listener.onViewHolder(convertView);
+        listener.onBindView(position, views);
 
         return convertView;
     }

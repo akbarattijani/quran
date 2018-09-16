@@ -53,7 +53,7 @@
     android:shape="rectangle">
 
     <solid
-        android:color="@color/colorPrimaryDarkBlue">
+        android:color="@color/white">
     </solid>
 
     <padding
@@ -64,6 +64,6 @@
     </padding>
 
     <corners
-        android:radius="20dp">
+        android:radius="10dp">
     </corners>
 </shape>

@@ -1,35 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".activity.TestActivity"
     android:orientation="vertical"
-    android:background="@drawable/background">
+    android:background="@color/colorPrimaryDarkBlue">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/merchantLightBlue">
-
-        <ImageView
-            android:layout_margin="10dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/back"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="Test"
-            android:textColor="@color/white" />
-    </android.support.v7.widget.Toolbar>
-
-    <ImageView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/ayat_quran1" />
+        android:orientation="vertical">
+
+        <link.fls.SwipeStack
+            android:layout_weight="0.1"
+            android:id="@+id/swipeAyat"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:stack_size="3"
+            app:stack_rotation="0"/>
+
+        <LinearLayout
+            android:id="@+id/footer"
+            android:background="@color/white"
+            android:layout_weight="0.9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_weight="0.5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/merchantGray_2"
+                    android:text="Start"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_centerInParent="true"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/merchantLightGray"/>
+
+            <RelativeLayout
+                android:layout_weight="0.5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/merchantGray_2"
+                    android:text="Send"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_centerInParent="true"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
