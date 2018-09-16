@@ -30,7 +30,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     private TextInputEditText etPassword;
     private LinearLayout llLogin;
     private TextView tvForget;
-
+    
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
