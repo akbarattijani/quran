@@ -1,6 +1,5 @@
 package com.quran.study.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -13,7 +12,7 @@ import com.quran.study.fragment.RegisterNextStepFragment;
  * @author AKBAR <akbar.attijani@gmail.com>
  */
 
-public class BeginActivity extends AppCompatActivity {
+public class BeginActivity extends BaseActivity {
     private LoginFragment loginFragment = new LoginFragment();
     private RegisterFragment registerFragment = new RegisterFragment();
     private RegisterNextStepFragment registerNextStepFragment = new RegisterNextStepFragment();

@@ -33,11 +33,13 @@
             android:orientation="horizontal">
 
             <RelativeLayout
+                android:id="@+id/rlRecord"
                 android:layout_weight="0.5"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <TextView
+                    android:id="@+id/tvRecord"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/merchantGray_2"
@@ -53,6 +55,7 @@
                 android:background="@color/merchantLightGray"/>
 
             <RelativeLayout
+                android:id="@+id/rlSend"
                 android:layout_weight="0.5"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">

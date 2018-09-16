@@ -8,7 +8,11 @@ import android.widget.LinearLayout;
 
 import com.quran.study.R;
 
-public class LauncherActivity extends AppCompatActivity implements View.OnClickListener {
+/**
+ * @author AKBAR <akbar.attijani@gmail.com>
+ */
+
+public class LauncherActivity extends BaseActivity implements View.OnClickListener {
     private LinearLayout llLogin;
     private LinearLayout llRegister;
 

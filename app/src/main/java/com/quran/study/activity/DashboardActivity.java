@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.quran.study.R;
 import com.quran.study.util.OpacityUtil;
@@ -13,7 +14,7 @@ import com.quran.study.util.OpacityUtil;
  * @author AKBAR <akbar.attijani@gmail.com>
  */
 
-public class DashboardActivity extends AppCompatActivity implements View.OnClickListener {
+public class DashboardActivity extends BaseActivity implements View.OnClickListener {
     private LinearLayout component;
     private LinearLayout llTest;
     private LinearLayout llLive;
@@ -39,7 +40,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
             Intent intent = new Intent(this, TestActivity.class);
             startActivity(intent);
         } else if (v == llLive) {
-
+            Toast.makeText(this, "Coming Soon...", Toast.LENGTH_LONG).show();
         }
     }
 }

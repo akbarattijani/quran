@@ -1,14 +1,28 @@
 package com.quran.study.activity;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Handler;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ProgressBar;
 
 import com.quran.study.R;
+/**
+ * @author AKBAR <akbar.attijani@gmail.com>
+ */
 
-public class StartupActivity extends AppCompatActivity {
+public class StartupActivity extends BaseActivity {
+    private String [] permissions = {
+            Manifest.permission.INTERNET,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.RECORD_AUDIO
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +44,39 @@ public class StartupActivity extends AppCompatActivity {
             }, 2000);
         }
 
-        Intent intent = new Intent(this, LauncherActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
+        if (!hasPermissions(permissions)) {
+            ActivityCompat.requestPermissions(this, permissions, 0);
+        } else {
+            Intent intent = new Intent(this, LauncherActivity.class);
+            startActivity(intent);
+            finish();
+        }
+    }
+
+    public boolean hasPermissions(String... permissions) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && permissions != null) {
+            for (String permission : permissions) {
+                if (ActivityCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode){
+            case 0:
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    Intent intent = new Intent(this, LauncherActivity.class);
+                    startActivity(intent);
+                }
+
+                finish();
+                return;
+        }
     }
 }
