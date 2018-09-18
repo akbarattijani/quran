@@ -7,6 +7,10 @@ import android.util.Log;
 
 import java.io.IOException;
 
+/**
+ * @author AKBAR <akbar.attijani@gmail.com>
+ */
+
 public class AudioRecorder {
     private String mDirectory;
     private String mFileName;

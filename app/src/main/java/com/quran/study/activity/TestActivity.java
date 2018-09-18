@@ -1,6 +1,8 @@
 package com.quran.study.activity;
 
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -35,9 +37,9 @@ public class TestActivity extends BaseActivity implements SwipeListener, View.On
     private final int RC_STOP_PLAYING = 3;
     private int REQUEST_CODE = RC_START_RECORD;
 
-    private final String startRecord = "RECORD";
-    private final String stop = "STOP";
-    private final String startPlay = "PLAY";
+    private final String startRecord = "Record";
+    private final String stop = "Stop";
+    private final String startPlay = "Play";
 
     private AudioRecorder recorder;
 
@@ -45,6 +47,11 @@ public class TestActivity extends BaseActivity implements SwipeListener, View.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
+        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Back");
+        getSupportActionBar().setElevation(8f);
 
         footer = (LinearLayout) findViewById(R.id.footer);
         footer.setAnimation(new OpacityUtil().set(0.5F, 0.5F));
@@ -79,15 +86,34 @@ public class TestActivity extends BaseActivity implements SwipeListener, View.On
     }
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     public View[] onViewHolder(View container) {
-        View[] views = new View[1];
+        View[] views = new View[2];
         views[0] = (ImageView) container.findViewById(R.id.imgAyat);
+        views[1] = (TextView) container.findViewById(R.id.tvName);
         return views;
     }
 
     @Override
     public void onBindView(int position, View... container) {
-
+        if (position == 0) {
+            ((ImageView) container[0]).setImageDrawable(getResources().getDrawable(R.drawable.alfatihah));
+            ((TextView) container[1]).setText("Al-Fatihah");
+        } else if (position == 1) {
+            ((ImageView) container[0]).setImageDrawable(getResources().getDrawable(R.drawable.alikhlas));
+            ((TextView) container[1]).setText("Al-Ikhlas");
+        } else if (position == 2) {
+            ((ImageView) container[0]).setImageDrawable(getResources().getDrawable(R.drawable.alfalaq));
+            ((TextView) container[1]).setText("Al-Falaq");
+        }
     }
 
     @Override
