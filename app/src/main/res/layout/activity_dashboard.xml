@@ -189,7 +189,29 @@
                 android:src="@drawable/edit"/>
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/llResult"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/colorPrimaryDarkBlue"
+            android:elevation="4dp">
+
+            <TextView
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="Test Result"
+                android:textSize="14dp"/>
+        </LinearLayout>
+
         <View
+            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="2dp"
             android:background="@color/merchantLightGray_2"/>

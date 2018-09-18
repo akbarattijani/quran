@@ -18,6 +18,7 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
     private LinearLayout component;
     private LinearLayout llTest;
     private LinearLayout llLive;
+    private LinearLayout llResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +30,11 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
 
         llTest = (LinearLayout) findViewById(R.id.llTest);
         llLive = (LinearLayout) findViewById(R.id.llLive);
+        llResult = (LinearLayout) findViewById(R.id.llResult);
 
         llTest.setOnClickListener(this);
         llLive.setOnClickListener(this);
+        llResult.setOnClickListener(this);
     }
 
     @Override
@@ -41,6 +44,9 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
             startActivity(intent);
         } else if (v == llLive) {
             Toast.makeText(this, "Coming Soon...", Toast.LENGTH_LONG).show();
+        } else if (v == llResult) {
+            Intent intent = new Intent(this, TestResultActivity.class);
+            startActivity(intent);
         }
     }
 }

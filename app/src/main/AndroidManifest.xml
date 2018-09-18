@@ -50,7 +50,18 @@
             android:launchMode="singleInstance"
             android:screenOrientation="portrait"
             android:theme="@style/base_theme" />
-        <activity android:name=".activity.BaseErrorActivity"></activity>
+        <activity
+            android:name=".activity.BaseErrorActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@style/base_theme"/>
+        <activity
+            android:name=".activity.TestResultActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@style/base_theme"/>
     </application>
 
 </manifest>
