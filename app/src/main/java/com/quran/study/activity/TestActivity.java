@@ -31,6 +31,8 @@ public class TestActivity extends BaseActivity implements SwipeListener, View.On
     private RelativeLayout rlSend;
     private TextView tvRecord;
 
+    private SwipeStack stack;
+
     private final int RC_START_RECORD = 0;
     private final int RC_STOP_RECORD = 1;
     private final int RC_START_PLAYING = 2;
@@ -65,7 +67,7 @@ public class TestActivity extends BaseActivity implements SwipeListener, View.On
         rlSend.setOnClickListener(this);
 
         adapter = new SwipeStackAdapter(this, 3, this, R.layout.test_ayat_layout, R.layout.test_ayat_layout, R.layout.test_ayat_layout);
-        SwipeStack stack = (SwipeStack) findViewById(R.id.swipeAyat);
+        stack = (SwipeStack) findViewById(R.id.swipeAyat);
         stack.setAdapter(adapter);
         stack.setListener(new SwipeStack.SwipeStackListener() {
             @Override
@@ -96,9 +98,12 @@ public class TestActivity extends BaseActivity implements SwipeListener, View.On
 
     @Override
     public View[] onViewHolder(View container) {
-        View[] views = new View[2];
+        View[] views = new View[4];
         views[0] = (ImageView) container.findViewById(R.id.imgAyat);
         views[1] = (TextView) container.findViewById(R.id.tvName);
+        views[2] = (TextView) container.findViewById(R.id.tvSlideAyat);
+        views[3] = (ImageView) container.findViewById(R.id.ivAyat);
+
         return views;
     }
 
@@ -114,6 +119,20 @@ public class TestActivity extends BaseActivity implements SwipeListener, View.On
             ((ImageView) container[0]).setImageDrawable(getResources().getDrawable(R.drawable.alfalaq));
             ((TextView) container[1]).setText("Al-Falaq");
         }
+
+        ((TextView) container[2]).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stack.swipeTopViewToRight();
+            }
+        });
+
+        ((ImageView) container[3]).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stack.swipeTopViewToRight();
+            }
+        });
     }
 
     @Override
