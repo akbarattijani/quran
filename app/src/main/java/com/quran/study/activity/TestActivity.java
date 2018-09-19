@@ -198,6 +198,7 @@ public class TestActivity extends BaseActivity implements SwipeListener, View.On
         } else if (v == rlSend) {
             Intent intent = new Intent(this, TestResultActivity.class);
             startActivity(intent);
+            finish();
         }
     }
 }
