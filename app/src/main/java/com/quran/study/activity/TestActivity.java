@@ -1,5 +1,6 @@
 package com.quran.study.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -195,8 +196,8 @@ public class TestActivity extends BaseActivity implements SwipeListener, View.On
                 tvRecord.setText(startPlay);
             }
         } else if (v == rlSend) {
-            Toast.makeText(this, "Record has been sent", Toast.LENGTH_LONG).show();
-            onBackPressed();
+            Intent intent = new Intent(this, TestResultActivity.class);
+            startActivity(intent);
         }
     }
 }
