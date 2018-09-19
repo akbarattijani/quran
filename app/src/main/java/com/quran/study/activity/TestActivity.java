@@ -12,9 +12,13 @@ import android.widget.Toast;
 
 import com.quran.study.R;
 import com.quran.study.adapter.SwipeStackAdapter;
+import com.quran.study.global.VariableConstant;
 import com.quran.study.listener.SwipeListener;
 import com.quran.study.util.AudioRecorder;
 import com.quran.study.util.OpacityUtil;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import link.fls.SwipeStack;
 
@@ -44,6 +48,7 @@ public class TestActivity extends BaseActivity implements SwipeListener, View.On
     private final String startPlay = "Play";
 
     private AudioRecorder recorder;
+    private Map<String, AudioRecorder> dataAudio = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,12 +77,12 @@ public class TestActivity extends BaseActivity implements SwipeListener, View.On
         stack.setListener(new SwipeStack.SwipeStackListener() {
             @Override
             public void onViewSwipedToLeft(int position) {
-
+                settingRecording(position);
             }
 
             @Override
             public void onViewSwipedToRight(int position) {
-
+                settingRecording(position);
             }
 
             @Override
@@ -85,6 +90,34 @@ public class TestActivity extends BaseActivity implements SwipeListener, View.On
                 adapter.notifyDataSetChanged();
             }
         });
+    }
+
+    private void settingRecording(int position) {
+        if (REQUEST_CODE == RC_STOP_RECORD || REQUEST_CODE == RC_START_PLAYING || REQUEST_CODE == RC_STOP_PLAYING) {
+            if (recorder != null && !recorder.recordingIsNull() && !recorder.playerIsNull()) {
+                AudioRecorder audioRecorder = new AudioRecorder(this,recorder.getFileName())
+                        .setMediaRecorder(recorder.getMediaRecorder())
+                        .setMediaPlayer(recorder.getMediaPlayer());
+
+                dataAudio.put(String.valueOf(position), audioRecorder);
+                recorder.stopRecording();
+                recorder.stopPlaying();
+            }
+
+            if (recorder != null && !recorder.recordingIsNull()) {
+                recorder.stopRecording();
+            }
+
+            if (recorder != null && !recorder.playerIsNull()) {
+                recorder.stopPlaying();
+            }
+
+            recorder = new AudioRecorder(TestActivity.this, String.valueOf(System.currentTimeMillis()) + ".3dp");
+            REQUEST_CODE = RC_START_RECORD;
+            tvRecord.setText(startRecord);
+
+            VariableConstant.getInstance().setAudioConstant(dataAudio);
+        }
     }
 
     @Override
@@ -144,6 +177,11 @@ public class TestActivity extends BaseActivity implements SwipeListener, View.On
                 REQUEST_CODE = RC_STOP_RECORD;
                 tvRecord.setText(stop);
             } else if (REQUEST_CODE == RC_STOP_RECORD) {
+                AudioRecorder audioRecorder = new AudioRecorder(this,recorder.getFileName())
+                        .setMediaRecorder(recorder.getMediaRecorder())
+                        .setMediaPlayer(recorder.getMediaPlayer());
+
+                dataAudio.put(String.valueOf(stack.getCurrentPosition()), audioRecorder);
                 recorder.stopRecording();
                 REQUEST_CODE = RC_START_PLAYING;
                 tvRecord.setText(startPlay);

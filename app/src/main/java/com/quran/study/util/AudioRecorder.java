@@ -14,13 +14,15 @@ import java.io.IOException;
 public class AudioRecorder {
     private String mDirectory;
     private String mFileName;
+    private String mPureFileName;
 
     private MediaRecorder mRecorder = null;
     private MediaPlayer mPlayer = null;
 
     public AudioRecorder(Activity activity, String fileName) {
         mDirectory = activity.getExternalCacheDir().getAbsolutePath();
-        this.mFileName = mDirectory + "/" + (fileName.contains(".3gp") ? fileName : fileName + ".3gp");
+        this.mPureFileName = (fileName.contains(".3gp") ? fileName : fileName + ".3gp");
+        this.mFileName = mDirectory + "/" + mPureFileName;
     }
 
     public void startRecording() {
@@ -40,9 +42,11 @@ public class AudioRecorder {
     }
 
     public void stopRecording() {
-        mRecorder.stop();
-        mRecorder.release();
-        mRecorder = null;
+        if (mRecorder != null) {
+            mRecorder.stop();
+            mRecorder.release();
+            mRecorder = null;
+        }
     }
 
     public void startPlaying() {
@@ -52,13 +56,53 @@ public class AudioRecorder {
             mPlayer.prepare();
             mPlayer.start();
         } catch (IOException e) {
-            Log.e("START PLAYING", "prepare() failed");
+
+            e.printStackTrace();
+        }
+    }
+
+    public boolean recordingIsNull() {
+        return mRecorder == null;
+    }
+
+    public boolean playerIsNull() {
+        return mPlayer == null;
+    }
+
+    public boolean isPlay() {
+        try {
+            return mPlayer.isPlaying();
+        } catch (Exception e) {
+            return false;
         }
     }
 
     public void stopPlaying() {
-        mPlayer.release();
-        mPlayer = null;
+        if (mPlayer != null) {
+            mPlayer.release();
+            mPlayer = null;
+        }
     }
 
+    public AudioRecorder setMediaRecorder(MediaRecorder mediaRecorder) {
+        this.mRecorder = mediaRecorder;
+        return this;
+    }
+
+    public AudioRecorder setMediaPlayer(MediaPlayer mediaPlayer) {
+        this.mPlayer = mediaPlayer;
+        return this;
+    }
+
+    public MediaRecorder getMediaRecorder() {
+        return mRecorder;
+    }
+
+    public MediaPlayer getMediaPlayer() {
+        return mPlayer;
+    }
+
+    public String getFileName() {
+        return mPureFileName;
+    }
 }

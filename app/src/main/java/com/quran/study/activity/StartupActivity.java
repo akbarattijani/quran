@@ -12,6 +12,8 @@ import android.os.Bundle;
 import android.widget.ProgressBar;
 
 import com.quran.study.R;
+import com.quran.study.global.VariableConstant;
+
 /**
  * @author AKBAR <akbar.attijani@gmail.com>
  */

@@ -1,20 +1,23 @@
 package com.quran.study.activity;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.quran.study.R;
 import com.quran.study.adapter.DynamicAdapter;
 import com.quran.study.datastructure.TestResult;
+import com.quran.study.global.VariableConstant;
 import com.quran.study.listener.DynamicListener;
+import com.quran.study.util.AudioRecorder;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -39,37 +42,29 @@ public class TestResultActivity extends BaseActivity implements DynamicListener 
 
         data = new ArrayList<>();
         TestResult testResultAlFatihah = new TestResult()
-                .setId("1")
+                .setId("0")
                 .setNameSurah("Al-Fatihah")
                 .setDate(new SimpleDateFormat("dd-MM-yyyy").format(new Date()))
                 .setScor(75)
                 .setRate("B");
 
         TestResult testResultAlIkhlas = new TestResult()
-                .setId("2")
+                .setId("1")
                 .setNameSurah("Al-Ikhlas")
                 .setDate(new SimpleDateFormat("dd-MM-yyyy").format(new Date()))
                 .setScor(89)
                 .setRate("A");
 
         TestResult testResultAlFalaq = new TestResult()
-                .setId("3")
+                .setId("2")
                 .setNameSurah("Al-Falaq")
                 .setDate(new SimpleDateFormat("dd-MM-yyyy").format(new Date()))
                 .setScor(68)
                 .setRate("C");
 
-        TestResult testResultAlKahfi = new TestResult()
-                .setId("4")
-                .setNameSurah("Al-Kahfi")
-                .setDate(new SimpleDateFormat("dd-MM-yyyy").format(new Date()))
-                .setScor(44)
-                .setRate("D");
-
         data.add(testResultAlFatihah);
         data.add(testResultAlIkhlas);
         data.add(testResultAlFalaq);
-        data.add(testResultAlKahfi);
 
         rvData = (RecyclerView) findViewById(R.id.rvData);
         rvData.setLayoutManager(new LinearLayoutManager(this));
@@ -85,8 +80,9 @@ public class TestResultActivity extends BaseActivity implements DynamicListener 
         TextView tvScor = (TextView) holder.views.get(3);
         TextView tvRate = (TextView) holder.views.get(4);
         LinearLayout rlItemList = (LinearLayout) holder.views.get(5);
+        final ImageView ivPlay = (ImageView) holder.views.get(6);
 
-        TestResult result = data.get(position);
+        final TestResult result = data.get(position);
         tvId.setText(result.getId());
         tvSurah.setText(result.getNameSurah());
         tvDate.setText(result.getDate());
@@ -114,15 +110,19 @@ public class TestResultActivity extends BaseActivity implements DynamicListener 
                 Toast.makeText(TestResultActivity.this, "Akan menampilkan detil hasil, seperti rekaman perbaikan cara baca, tips, level, dll", Toast.LENGTH_LONG).show();
             }
         });
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            onBackPressed();
-        }
+        ivPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AudioRecorder audioRecorder = VariableConstant.getInstance().getAudioConstant().get(result.getId());
 
-        return super.onOptionsItemSelected(item);
+                if (audioRecorder != null) {
+                    audioRecorder.startPlaying();
+                } else {
+                    Toast.makeText(TestResultActivity.this, "Record is not exists", Toast.LENGTH_LONG). show();
+                }
+            }
+        });
     }
 
     @Override
@@ -134,7 +134,17 @@ public class TestResultActivity extends BaseActivity implements DynamicListener 
         views.add((TextView) view.findViewById(R.id.tvScor));
         views.add((TextView) view.findViewById(R.id.tvRate));
         views.add((LinearLayout) view.findViewById(R.id.rlItemList));
+        views.add((ImageView) view.findViewById(R.id.ivPlay));
 
         return views;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
